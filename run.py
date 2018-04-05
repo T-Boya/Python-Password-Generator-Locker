@@ -94,7 +94,7 @@ while True:
         searched_username = input("What is the username for the account that you want to search for?: ")
         if userFound(searched_username):
             print("These are the credentials:")
-            found_username = find_user(searched_username)
+            found_username = find_user(User, searched_username)
             print ("Website: {}".format(searched_username.website))
             print ("Username: {}".format(searched_username.username))
             print ("Password: {}".format(searched_username.password))
@@ -102,6 +102,21 @@ while True:
 
         else:
             print("We do not have that account's data")
+
+    if function_choice == "delete":
+        account_to_delete = input("What is the username of the credential set you want to delete?: ")
+        if userFound(account_to_delete):
+            searchDelete = find_user(account_to_delete)
+            delete_user(searchDelete)
+            print("The following has been deleted: ")
+            print ("Website: {}".format(searched_username.website))
+            print ("Username: {}".format(searched_username.username))
+            print ("Password: {}".format(searched_username.password))
+            delete_user(search_delete_user)
+    
+        else:
+            print("We do not have that account's data")
+
 
     if function_choice == "password":
         print("your password will be a randomly generated 7 digit number")
