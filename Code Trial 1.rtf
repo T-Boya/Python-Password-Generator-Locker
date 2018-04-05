@@ -1,0 +1,57 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\fnil\fcharset222 Ayuthaya;}
+{\colortbl;\red255\green255\blue255;\red109\green109\blue109;\red0\green0\blue109;\red245\green107\blue164;
+\red160\green0\blue163;\red128\green63\blue122;\red252\green106\blue38;\red14\green110\blue109;\red0\green0\blue162;
+}
+{\*\expandedcolortbl;;\csgenericrgb\c42745\c42745\c42745;\csgenericrgb\c0\c0\c42745;\csgenericrgb\c96078\c41961\c64314;
+\csgenericrgb\c62745\c0\c63922;\csgenericrgb\c50196\c24706\c47843;\csgenericrgb\c98824\c41569\c14902;\csgenericrgb\c5490\c43137\c42745;\csgenericrgb\c0\c0\c63529;
+}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 # import random\
+# import cPickle\
+\cf3 import \cf0 traceback\
+\
+\
+\cf3 class \cf4 Accounts\cf0 (\cf3 object\cf0 ):\
+    \cf2 """Account details for a particular website. Accounts have the\
+    following properties:\
+\
+    Attributes:\
+        website: A string showing the website name.\
+        username: A string showing the user's username.\
+        password: A number showing the user's password\
+    """\
+\
+    \cf3 def \cf5 __init__\cf0 (\cf6 self\cf0 , website, username, password):\
+        \cf2 """Return an account object whose website is "website", username is "username" and password is "password"."""\
+        \cf6 self\cf0 .website = website\
+        \cf6 self\cf0 .username = username\
+        \cf6 self\cf0 .password = password\
+\
+    loginCredentials = \{\}\
+\
+    \cf3 def \
+    def \cf7 displaycredentials\cf0 (\cf6 self\cf0 ):\
+        \cf3 print\cf0 (\cf8 "Website : "\cf0 , \cf6 self\cf0 .website, \cf8 ", Username: "\cf0 , \cf6 self\cf0 .username, \cf8 ", Password: "\cf0 , \cf6 self\cf0 .password)\
+\
+    \cf9 @staticmethod\
+    \cf3 def \cf7 account\cf0 ():\
+        \cf3 return \cf0 Accounts(\cf3 input\cf0 (\cf8 "What website is this account for? (Enter answer below)"\cf0 ),\
+                        \cf3 input\cf0 (\cf8 "What is your username? (Enter username below)"\cf0 ),\
+                        \cf3 input\cf0 (\cf8 "What will your password be? (enter password)"\cf0 )),\
+\
+    \cf3 def \cf7 newaccount\cf0 (\cf6 self\cf0 ):\
+        \cf6 self\cf0 .account(\cf6 self\cf0 )\
+        \cf3 with open\cf0 (\cf8 "storage.txt"\cf0 , \cf8 "a"\cf0 ) \cf3 as \cf0 myfile:\
+            myfile.write(\cf8 "dog"\cf0 )\
+\
+\
+\cf3 print\cf0 (\cf8 "test"\cf0 )\
+\
+\cf2 # Website = raw_input("What website is this account for? (Enter answer below)")\
+# Username = int(raw_input("What is your username? (Enter username below)"))\
+# Password = random.randint(1000000,10000000)\
+# print("Your password is " + password + ". You can view it in the 'Passwords' file")\
+}
