@@ -21,8 +21,8 @@ def check_existing_users(fname):
     return User.user_exist(fname)
 
 
-def display_users():
-    return User.display_users()
+def displayCredentials():
+    return User.displayCredentials()
 
 greeting_name = input("What is your name: ")
 greeting_phrase = "Hello {}, Welcome to the password locker. With just a little input, I can store your passwords for all sorts of different websites.".format(greeting_name)
@@ -56,6 +56,42 @@ print("Psst. You can also see you option again (options)")
 # elif function_choice == delete:
 while True:
     function_choice = input("Which would you like to do?: ")
+    if function_choice == "display":
+        if displayCredentials():
+            for user in displayCredentials():
+                # print(f"{user.website}{user.username}{user.password}")
+                print ("")
+                print ("Website: {}".format(user.website))
+                print ("Username: {}".format(user.username))
+                print ("Password: {}".format(user.password))
+                print ("")
+                break
+            while True:
+                continue_usage = input("Would you like to continue? (y or n): ")
+                if continue_usage == "y":
+                    break
+                    continue
+                elif continue_usage == "n":
+                    print("Okay, goodbye!")
+                    sys.exit()
+                    break
+                else:
+                    print("Please type in y or n!")
+        else:
+            print("You don't have any account data!")
+            while True:
+                continue_usage = input("Would you like to continue? (y or n): ")
+                if continue_usage == "y":
+                    break
+                    continue
+                elif continue_usage == "n":
+                    print("Okay, goodbye!")
+                    sys.exit()
+                    break
+                else:
+                    print("Please type in y or n!")
+            
+
     if function_choice == "password":
         print("your password will be a randomly generated 7 digit number")
         while True:
@@ -69,7 +105,7 @@ while True:
                 save_user(create_user(password_website, password_username, password_generated_saved))
                 print("Your information has been saved")
                 while True:
-                    continue_usage = input("Would you like to continue?: ")
+                    continue_usage = input("Would you like to continue? (y or n): ")
                     if continue_usage == "y":
                         break
                     elif continue_usage == "n":
@@ -83,7 +119,7 @@ while True:
                 password = random.randint(1000000, 10000000)
                 print("Your password is " + str(password))
                 while True:
-                    continue_usage = input("Would you like to continue?: ")
+                    continue_usage = input("Would you like to continue? (y or n): ")
                     if continue_usage == "y":
                         break
                     elif continue_usage == "n":
