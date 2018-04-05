@@ -29,7 +29,7 @@ greeting_phrase = "Hello {}, Welcome to the password locker. With just a little 
 print(greeting_phrase)
 
 while True:
-    get_to_it = input("Shall we begin? (y or n)")
+    get_to_it = input("Shall we begin? (y or n): ")
     if get_to_it == "y":
         print("OH YEAH!")
         break
@@ -39,6 +39,104 @@ while True:
         sys.exit()
         break
     else:
-        print("Please type in y or n!")
+        print("Please type in y or n!: ")
 
-print("hi")
+# print("So, here's how it works:")
+# print("I store can generate passwords or store login information for a website (or several)")
+print("So, here's what you can do!:")
+print("Display all user accounts (display)")
+print("Search for the credentials for a specific website account (search)")
+print("Delete a website account(delete)")
+print("Generate a password (password)")
+print("And exit :( (shutdown)")
+function_choice = input("Which would you like to do?: ")
+# if function_choice == display:
+
+# elif function_choice == search:
+
+# elif function_choice == delete:
+
+if function_choice == "password":
+    print("your password will be a randomly generated 7 digit number")
+    while True:
+        store_password = input("Do you want to store this passord? (y or n)?: ")
+        if store_password == "y":
+            print("To store this however, I am going to have to ask you two (simple) questions")
+            password_website = input("What website is this for?: ")
+            password_username = input("What is your username?: ")
+            password_generated_saved = str(random.randint(1000000, 10000000))
+            print("Your password is " + password_generated_saved)
+            save_user(create_user(password_website, password_username, password_generated_saved))
+            print("Your information has been saved")
+            while True:
+                continue_usage = input("Would you like to continue?: ")
+                if continue_usage == "y":
+                    break
+                elif continue_usage == "n":
+                    print("Okay, goodbye!")
+                    sys.exit()
+                    break
+                else:
+                    print("Please type in y or n!")
+            break
+        elif store_password == "n":
+            password = random.randint(1000000, 10000000)
+            print("Your password is " + str(password))
+            while True:
+                continue_usage = input("Would you like to continue?: ")
+                if continue_usage == "y":
+                    break
+                elif continue_usage == "n":
+                    print("Okay, goodbye!")
+                    sys.exit()
+                    break
+                else:
+                    print("Please type in y or n!")
+            break
+        else:
+            print("Please type in y or n!")
+
+elif function_choice == "shutdown":
+    print("Goodbye!")
+    sys.exit()
+
+
+# # while True:
+# #     function = input("Which would you like to do store, account information (si) or generate a password (gp)?: ")
+# #     if function == "si":
+# #         print("OH YEAH!")
+# #         break
+# #     elif function == "gp":
+#         print("your password will be a randomly generated 7 digit number")
+#         while True:
+#             store_password = input("Do you want to store this passord? (y or n)?: ")
+#             if store_password == "y":
+#                 print("To store this however, I am going to have to ask you two (simple) questions")
+#                 password_website = input("What website is this for?: ")
+#                 password_username = input("What is your username?: ")
+#                 password_generated_saved = str(random.randint(1000000, 10000000))
+#                 print("Your password is " + password_generated_saved)
+#                 save_user(create_user(password_website, password_username, password_generated_saved))
+#                 print("Your information has been saved")
+#                 # while True:
+#                 #     continue_usage = input("Would you like to continue?: ")
+#                 #     if continue_usage == "y":
+#                 #         break
+#                 #     elif continue_usage == "n":
+#                 #         print("Okay, goodbye!")
+#                 #         sys.exit()
+#                 #         break
+#                 #     else:
+#                 #         print("Please type in y or n!")
+#                 break
+#             elif store_password == "n":
+#                 password = random.randint(1000000, 10000000)
+#                 print("Your password is " + str(password))
+#                 print("Goodbye!")
+#                 sys.exit()
+#                 break
+#             else:
+#                 print("Please type in y or n!")
+# #     else:
+# #         print("Please type in gp or si!")
+
