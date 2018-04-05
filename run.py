@@ -13,12 +13,11 @@ def delete_user(user):
     user.delete_user()
 
 
-def find_user(number):
-    return User.find_by_number(number)
+def find_user(username):
+    return User.find_by_username(username)
 
-
-def check_existing_users(fname):
-    return User.user_exist(fname)
+def userFound(username):
+    return User.userFound(username)
 
 
 def displayCredentials():
@@ -91,6 +90,18 @@ while True:
                 else:
                     print("Please type in y or n!")
             
+    if function_choice == "search":
+        searched_username = input("What is the username for the account that you want to search for?: ")
+        if userFound(searched_username):
+            print("These are the credentials:")
+            found_username = find_user(searched_username)
+            print ("Website: {}".format(searched_username.website))
+            print ("Username: {}".format(searched_username.username))
+            print ("Password: {}".format(searched_username.password))
+            print ("")
+
+        else:
+            print("We do not have that account's data")
 
     if function_choice == "password":
         print("your password will be a randomly generated 7 digit number")
