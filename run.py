@@ -83,7 +83,7 @@ print("")
 answer_options = ["create", "display", "search", "delete", "password", "shutdown", "options"]
 
 while True:
-    function_choice = input("Which would you like to do?: ")
+    function_choice = input("What would you like to do?: ")
     if function_choice == "display":
         if displayCredentials():
             for user in displayCredentials():
