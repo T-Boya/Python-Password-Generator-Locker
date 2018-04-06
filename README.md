@@ -28,7 +28,7 @@ Tinashe Osewe
 Visit link in description
 
 ## Acknowledgements
-Help from Abdulahinur
+Help from Abdullahinur Abdullahi and Shem Muthanga
 
 ## Notes
 Comment section in "About" is under construction and does not currently work
