@@ -49,6 +49,7 @@ print("Delete a website account(delete)")
 print("Generate a password (password)")
 print("And exit :( (shutdown)")
 print("Psst. You can also see you option again (options)")
+print("")
 # if function_choice == display:
 
 # elif function_choice == search:
