@@ -40,8 +40,6 @@ while True:
     else:
         print("Please type in y or n!: ")
 
-# print("So, here's how it works:")
-# print("I store can generate passwords or store login information for a website (or several)")
 print("So, here's what you can do!:")
 print("Create an account for storage (create)")
 print("Display all user accounts (display)")
