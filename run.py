@@ -50,6 +50,8 @@ print("And exit :( (shutdown)")
 print("Psst. You can also see you option again (options)")
 print("")
 
+answer_options = ["create", "display", "search", "delete", "password", "shutdown", "options"]
+
 while True:
     function_choice = input("Which would you like to do?: ")
     if function_choice == "display":
@@ -87,7 +89,7 @@ while True:
                     print("Please type in y or n!")
 
     if function_choice == "create":
-        create_website = input("What wesbite is this for?: ")
+        create_website = input("What website is this for?: ")
         create_username = input("What is your username?: ")
         create_password = input("what is your password?: ")
         save_user(create_user(create_website, create_username, create_password))
@@ -105,7 +107,6 @@ while True:
             else:
                 print("Please type in y or n!")
 
-
     if function_choice == "search":
         searched_username = input("What is the username for the account that you want to search for?: ")
         if userFound(searched_username):
@@ -115,9 +116,31 @@ while True:
             print ("Username: {}".format(searched_username.username))
             print ("Password: {}".format(searched_username.password))
             print ("")
+            while True:
+                continue_usage = input("Would you like to continue? (y or n): ")
+                if continue_usage == "y":
+                    break
+                    continue
+                elif continue_usage == "n":
+                    print("Okay, goodbye!")
+                    sys.exit()
+                    break
+                else:
+                    print("Please type in y or n!")
 
         else:
             print("We do not have that account's data")
+            while True:
+                continue_usage = input("Would you like to continue? (y or n): ")
+                if continue_usage == "y":
+                    break
+                    continue
+                elif continue_usage == "n":
+                    print("Okay, goodbye!")
+                    sys.exit()
+                    break
+                else:
+                    print("Please type in y or n!")
 
     if function_choice == "delete":
         account_to_delete = input("What is the username of the credential set you want to delete?: ")
@@ -129,9 +152,31 @@ while True:
             print ("Username: {}".format(searched_username.username))
             print ("Password: {}".format(searched_username.password))
             delete_user(search_delete_user)
+            while True:
+                continue_usage = input("Would you like to continue? (y or n): ")
+                if continue_usage == "y":
+                    break
+                    continue
+                elif continue_usage == "n":
+                    print("Okay, goodbye!")
+                    sys.exit()
+                    break
+                else:
+                    print("Please type in y or n!")
     
         else:
             print("We do not have that account's data")
+            while True:
+                continue_usage = input("Would you like to continue? (y or n): ")
+                if continue_usage == "y":
+                    break
+                    continue
+                elif continue_usage == "n":
+                    print("Okay, goodbye!")
+                    sys.exit()
+                    break
+                else:
+                    print("Please type in y or n!")
 
 
     if function_choice == "password":
@@ -188,6 +233,7 @@ while True:
         print("Generate a password (password)")
         print("And exit :( (shutdown)")
 
-    else:
+    if function_choice not in answer_options:
         print("Please enter a valid option!")
+
     continue
