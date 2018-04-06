@@ -74,10 +74,10 @@ print("So, here's what you can do!:")
 print("Create an account for storage (create)")
 print("Display all user accounts (display)")
 print("Search for the credentials for a specific website account (search)")
-print("Delete a website account(delete)")
+print("Delete a website account (delete)")
 print("Generate a password (password)")
 print("And exit :( (shutdown)")
-print("Psst. You can also see you option again (options)")
+print("Psst. You can also see your options again (options)")
 print("")
 
 answer_options = ["create", "display", "search", "delete", "password", "shutdown", "options"]
@@ -258,7 +258,7 @@ while True:
         print("Create an account for storage (create)")
         print("Display all user accounts (display)")
         print("Search for the credentials for a specific website account (search)")
-        print("Delete a website account(delete)")
+        print("Delete a website account (delete)")
         print("Generate a password (password)")
         print("And exit :( (shutdown)")
 
