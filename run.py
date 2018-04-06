@@ -27,13 +27,31 @@ greeting_name = input("What is your name: ")
 greeting_phrase = "Hello {}, welcome to the password locker. With just a little input, I can store your passwords for all sorts of different websites.".format(greeting_name)
 print(greeting_phrase)
 print("First, let's make a login to keep your data safe!")
-authentication_username = input("what would you like your username to be?: ")
-authentication_password = input("what would you like your password to be?: ")
+authentication_username = input("What would you like your username to be?: ")
+while True:
+    authentication_password = input("What would you like your password to be?: ")
+    password_confirm = input("Please confirm your password: ")
+    if authentication_password != password_confirm:
+        print("Your password and password confirmation did not match. Please try again.")
+        continue
+    else:
+        break
+
 print("Great, now you have a login!")
 print("Let's try it out")
 while True:
     if input("What is your username?: ") != authentication_username or input("What is your password?: ") != authentication_password:
-        print("Your username or password was wrong, try again?")
+        while True:
+            continue_usage = input("Your username or password was wrong, try again? (y or n): ")
+            if continue_usage == "y":
+                break
+                continue
+            elif continue_usage == "n":
+                print("Okay, goodbye!")
+                sys.exit()
+                break
+            else:
+                print("Please type in y or n!")
         continue
     else:
         break
