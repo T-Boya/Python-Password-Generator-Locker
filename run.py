@@ -10,14 +10,14 @@ def save_user (user):
     user.save_user()
 
 def delete_user(user):
-    user.delete_user()
+    user.deleteUser()
 
 
 def find_user(username):
-    return User.find_by_username(username)
+    return User.find_by_username(User, username)
 
 def userFound(username):
-    return User.userFound(username)
+    return User.userFound(User, username)
 
 
 def displayCredentials():
@@ -26,9 +26,21 @@ def displayCredentials():
 greeting_name = input("What is your name: ")
 greeting_phrase = "Hello {}, welcome to the password locker. With just a little input, I can store your passwords for all sorts of different websites.".format(greeting_name)
 print(greeting_phrase)
+print("First, let's make a login to keep your data safe!")
+authentication_username = input("what would you like your username to be?: ")
+authentication_password = input("what would you like your password to be?: ")
+print("Great, now you have a login!")
+print("Let's try it out")
+while True:
+    if input("What is your username?: ") != authentication_username or input("What is your password?: ") != authentication_password:
+        print("Your username or password was wrong, try again?")
+        continue
+    else:
+        break
+    
 
 while True:
-    get_to_it = input("Shall we begin? (y or n): ")
+    get_to_it = input("Now for the fun part! Shall we begin? (y or n): ")
     if get_to_it == "y":
         print("OH YEAH!")
         print("")
@@ -111,10 +123,10 @@ while True:
         searched_username = input("What is the username for the account that you want to search for?: ")
         if userFound(searched_username):
             print("These are the credentials:")
-            found_username = find_user(User, searched_username)
-            print ("Website: {}".format(searched_username.website))
-            print ("Username: {}".format(searched_username.username))
-            print ("Password: {}".format(searched_username.password))
+            found_username = find_user(searched_username)
+            print ("Website: {}".format(found_username.website))
+            print ("Username: {}".format(found_username.username))
+            print ("Password: {}".format(found_username.password))
             print ("")
             while True:
                 continue_usage = input("Would you like to continue? (y or n): ")
@@ -148,9 +160,9 @@ while True:
             searchDelete = find_user(account_to_delete)
             delete_user(searchDelete)
             print("The following has been deleted: ")
-            print ("Website: {}".format(searched_username.website))
-            print ("Username: {}".format(searched_username.username))
-            print ("Password: {}".format(searched_username.password))
+            print ("Website: {}".format(account_to_delete.website))
+            print ("Username: {}".format(account_to_delete.username))
+            print ("Password: {}".format(account_to_delete.password))
             delete_user(search_delete_user)
             while True:
                 continue_usage = input("Would you like to continue? (y or n): ")
