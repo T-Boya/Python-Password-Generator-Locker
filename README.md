@@ -31,4 +31,4 @@ Visit link in description
 Help from Abdullahinur Abdullahi and Shem Muthanga
 
 ## Notes
-Comment section in "About" is under construction and does not currently work
+None
