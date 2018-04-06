@@ -160,10 +160,9 @@ while True:
             searchDelete = find_user(account_to_delete)
             delete_user(searchDelete)
             print("The following has been deleted: ")
-            print ("Website: {}".format(account_to_delete.website))
-            print ("Username: {}".format(account_to_delete.username))
-            print ("Password: {}".format(account_to_delete.password))
-            delete_user(search_delete_user)
+            print ("Website: {}".format(searchDelete.website))
+            print ("Username: {}".format(searchDelete.username))
+            print ("Password: {}".format(searchDelete.password))
             while True:
                 continue_usage = input("Would you like to continue? (y or n): ")
                 if continue_usage == "y":
