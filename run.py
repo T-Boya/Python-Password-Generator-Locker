@@ -43,6 +43,7 @@ while True:
 # print("So, here's how it works:")
 # print("I store can generate passwords or store login information for a website (or several)")
 print("So, here's what you can do!:")
+print("Create an account for storage (create)")
 print("Display all user accounts (display)")
 print("Search for the credentials for a specific website account (search)")
 print("Delete a website account(delete)")
@@ -50,17 +51,12 @@ print("Generate a password (password)")
 print("And exit :( (shutdown)")
 print("Psst. You can also see you option again (options)")
 print("")
-# if function_choice == display:
 
-# elif function_choice == search:
-
-# elif function_choice == delete:
 while True:
     function_choice = input("Which would you like to do?: ")
     if function_choice == "display":
         if displayCredentials():
             for user in displayCredentials():
-                # print(f"{user.website}{user.username}{user.password}")
                 print ("")
                 print ("Website: {}".format(user.website))
                 print ("Username: {}".format(user.username))
@@ -91,7 +87,27 @@ while True:
                     break
                 else:
                     print("Please type in y or n!")
-            
+
+    if function_choice == "create":
+        create_website = input("What wesbite is this for?: ")
+        create_username = input("What is your username?: ")
+        create_password = input("what is your password?: ")
+        save_user(create_user(create_website, create_username, create_password))
+        print("Your information has been saved")
+        while True:
+            continue_usage = input("Would you like to continue? (y or n): ")
+            if continue_usage == "y":
+                break
+                break
+                continue
+            elif continue_usage == "n":
+                print("Okay, goodbye!")
+                sys.exit()
+                break
+            else:
+                print("Please type in y or n!")
+
+
     if function_choice == "search":
         searched_username = input("What is the username for the account that you want to search for?: ")
         if userFound(searched_username):
@@ -167,6 +183,7 @@ while True:
 
     elif function_choice == "options":
         print("So, here's what you can do!:")
+        print("Create an account for storage (create)")
         print("Display all user accounts (display)")
         print("Search for the credentials for a specific website account (search)")
         print("Delete a website account(delete)")
