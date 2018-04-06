@@ -24,13 +24,14 @@ def displayCredentials():
     return User.displayCredentials()
 
 greeting_name = input("What is your name: ")
-greeting_phrase = "Hello {}, Welcome to the password locker. With just a little input, I can store your passwords for all sorts of different websites.".format(greeting_name)
+greeting_phrase = "Hello {}, welcome to the password locker. With just a little input, I can store your passwords for all sorts of different websites.".format(greeting_name)
 print(greeting_phrase)
 
 while True:
     get_to_it = input("Shall we begin? (y or n): ")
     if get_to_it == "y":
         print("OH YEAH!")
+        print("")
         break
     elif get_to_it == "n":
         print("Okay, goodbye!")
