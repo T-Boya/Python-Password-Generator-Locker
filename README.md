@@ -1,4 +1,4 @@
-# Tinashe Osewe's Password Locker
+# Password Locker
 
 ## Description
 A Python app to store user credentials sets for website logins. Given that people often have multiple accounts for each website, each credential set contains the website name, their username and their password. Passwords can also be generated with this app.
